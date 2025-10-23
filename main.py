@@ -2,7 +2,7 @@
 #-------------------------IMPORTING FUNCTIONS-------------------------
 # ====================================================================
 
-from stats import word_counter, key_counter, sort_dic, sort_alpha, sort_nalpha
+from stats import word_counter, key_counter, sort_alpha, sort_nalpha
 import sys
 
 # ====================================================================
@@ -10,8 +10,12 @@ import sys
 # ====================================================================
 
 def get_book_text(filepath):
-    with open(filepath) as f:
-        return f.read()
+    try:
+        with open(filepath) as f:
+            return f.read()
+    except Exception:
+        print("Error: invalid file path")
+        sys.exit(1)
 
 def list_chars(string):
     separator = "super_special_separator_that_is_highly_unlikely_to_naturaly_appear_in_a_given_written_text_'Rq9*c8;tCI9"
@@ -51,10 +55,10 @@ print("============ BOOKBOT ============")
 if len(sys.argv) == 1:
     print("Usage: python3 main.py <path_to_book> [flag]")
     print("Unflagged use analyses alphabetical characters")
-    print("Valid flags: '--non-alpha': analyses non alphabetical characters")
+    print("Valid flags: '--non-alpha', '--nalpha', '--na': analyses non alphabetical characters")
     sys.exit(1)
 try:
-    if sys.argv[2] == "--non-alpha": flagged_main(sys.argv[1])
+    if sys.argv[2] in ["--non-alpha", "--nalpha", "--na"]: flagged_main(sys.argv[1])
     else:
         print("flag not recognized, executing unflagged functionality")
         print("---------------------------------")

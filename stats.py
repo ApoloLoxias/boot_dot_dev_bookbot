@@ -36,11 +36,6 @@ def sort_on_follow_up(list):
     list.sort(reverse = True, key=sort_on)
     return list
 
-# Nested function for reduced insanity check DC on code reading
-# Unused
-def sort_dic(dic):
-    return sort_on_follow_up(helper_function(dic))
-
 # Like the funcition above, but only for alphabetical characters
 def sort_alpha(dic):
     return sort_on_follow_up(helper_function(only_alpha(dic)))
@@ -66,7 +61,3 @@ def only_nalpha(dic):
         if key.isalpha() == False:
             nalpha_dic[key] = dic [key]
     return nalpha_dic
-
-
-#dic = {"a": 1, " ": 3, ":": 7, "b": 4}
-#print(sort_nalpha(dic))
