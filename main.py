@@ -2,7 +2,7 @@
 #-------------------------IMPORTING FUNCTIONS-------------------------
 # ====================================================================
 
-from stats import word_counter, key_counter, sort_dic, sort_alpha
+from stats import word_counter, key_counter, sort_dic, sort_alpha, sort_nalpha
 import sys
 
 # ====================================================================
@@ -22,7 +22,7 @@ def pretty_printer(sorted_list_of_dics):
         print(f"{dic["char"]}: {dic["count"]}")
 
 # ====================================================================
-#----------------------------MAIN FUNCTION----------------------------
+#---------------------------MAIN FUNCTIONS----------------------------
 # ====================================================================
 
 
@@ -36,6 +36,15 @@ def main(path_to_book):
     pretty_printer(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
     print("============= END ===============")
 
+def flagged_main(path_to_book):
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path_to_book}...")
+    book_text_in_lower_case = get_book_text(path_to_book).lower()
+    print("----------- Word Count ----------")
+    print(f"Found {word_counter(book_text_in_lower_case)} total words")
+    print("--------- Character Count -------")
+    pretty_printer(sort_nalpha(key_counter(list_chars(book_text_in_lower_case))))
+    print("============= END ===============")
 # ====================================================================
 #----------------------------CODE EXECUTION---------------------------
 # ====================================================================
@@ -48,4 +57,5 @@ try:
     else: print("flag not recognized")
 except Exception: pass
 
-main(sys.argv[1])
+# main(sys.argv[1])
+flagged_main(sys.argv[1])

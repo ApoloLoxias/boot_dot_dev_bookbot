@@ -45,6 +45,10 @@ def sort_dic(dic):
 def sort_alpha(dic):
     return sort_on_follow_up(helper_function(only_alpha(dic)))
 
+# Like the function above, but for non-alphabetical characters
+def sort_nalpha(dic):
+    return sort_on_follow_up(helper_function(only_nalpha(dic)))
+
 ##################################
 # Exclusion of non alphabetical characters
 ##################################
@@ -62,3 +66,7 @@ def only_nalpha(dic):
         if key.isalpha() == False:
             nalpha_dic[key] = dic [key]
     return nalpha_dic
+
+
+#dic = {"a": 1, " ": 3, ":": 7, "b": 4}
+#print(sort_nalpha(dic))
