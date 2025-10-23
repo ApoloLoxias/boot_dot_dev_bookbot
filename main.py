@@ -27,7 +27,6 @@ def pretty_printer(sorted_list_of_dics):
 
 
 def main(path_to_book):
-    print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_book}...")
     book_text_in_lower_case = get_book_text(path_to_book).lower()
     print("----------- Word Count ----------")
@@ -37,7 +36,6 @@ def main(path_to_book):
     print("============= END ===============")
 
 def flagged_main(path_to_book):
-    print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_book}...")
     book_text_in_lower_case = get_book_text(path_to_book).lower()
     print("----------- Word Count ----------")
@@ -49,13 +47,17 @@ def flagged_main(path_to_book):
 #----------------------------CODE EXECUTION---------------------------
 # ====================================================================
 
+print("============ BOOKBOT ============")
 if len(sys.argv) == 1:
-    print("Usage: python3 main.py <path_to_book>")
+    print("Usage: python3 main.py <path_to_book> [flag]")
+    print("Unflagged use analyses alphabetical characters")
+    print("Valid flags: '--non-alpha': analyses non alphabetical characters")
     sys.exit(1)
 try:
-    if sys.argv[2] == "--non-alpha": print("non-alpha flag")
-    else: print("flag not recognized")
-except Exception: pass
+    if sys.argv[2] == "--non-alpha": flagged_main(sys.argv[1])
+    else:
+        print("flag not recognized, executing unflagged functionality")
+        print("---------------------------------")
+        main(sys.argv[1])
+except Exception: main(sys.argv[1])
 
-# main(sys.argv[1])
-flagged_main(sys.argv[1])
