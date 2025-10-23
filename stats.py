@@ -35,3 +35,7 @@ def sort_on(items):
 def sort_on_follow_up(list):
     list.sort(reverse = True, key=sort_on)
     return list
+
+# Nested function for reduced insanity check DC on code reading
+def sort_dic(dic)
+    return sort_on_follow_up(helper_function(dic))
