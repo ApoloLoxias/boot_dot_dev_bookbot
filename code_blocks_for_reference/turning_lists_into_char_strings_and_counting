@@ -1,0 +1,91 @@
+"""
+Reference code for getting a string transforming it into a list of characters including whitespaces
+"""
+
+
+
+# gets the chars that are in the dic and excepts those which aren't
+"""
+dic={"k": 1, "m": 3}
+for key in ["k", "l", "m"]: 
+    try:
+        value = dic[key]
+        print(value)
+    except Exception: print("key not found")
+"""
+
+
+# gets the keys in the list and adds 1 to their value each time they're mentioned
+"""
+dic={1: 0, 2: 1}
+for key in [1, 2, 1, 1]:
+    print(key,": ", dic[key])
+    dic[key] += 1
+    print(key,": ", dic[key])
+    print("--------------")
+print("=====================+")
+print(dic)
+"""
+
+
+# adds new key (and it's value) to an existing dictionary
+"""
+dic={}
+dic["new key"] = "value"
+print(dic)
+"""
+
+
+
+## Increments the value of a key by 1 for each time it appears in a list and creates a key of value 1 for the first time a key which is absent from the dictionary appears in the lsit
+#Define test case
+"""
+dic = {"k": 1, "l": 2, "n": 1}
+keys = ["k", "l", "m"]
+print(dic, f"testing keys: {keys}")
+print("====================")
+# Start code
+for key in keys: 
+    try:
+        print(f"testing key {key}: {dic[key]}")
+        dic[key] += 1
+        print(f"incrementing to {key}: {dic[key]}")
+        print("-----------")
+    except Exception:
+        print(f"key {key} not found")
+        dic[key] =  1
+        print(f"creating key {key}: {dic[key]}" )
+print("==============")
+print(dic)
+"""
+
+# Previous block for production:
+"""
+def key_counter(keys): #starts with empty dictionary
+    dic = {}
+    for key in keys: 
+        try:
+            dic[key] += 1
+        except Exception:
+            dic[key] =  1
+    print(dic)
+
+# Testing production code
+key_counter(["l", "l", "m", "l"])
+"""
+
+# transforms a string into a character list, including whitespaces
+"""
+a = "word palavra"
+separator = "super_special_separator_that_is_highly_unlikely_to_naturaly_appear_in_a_given_written_text_'Rq9*c8;tCI9"
+a = separator.join(a)
+a = a.split(separator)
+print(a)
+"""
+
+# previous block for production
+"""
+def list_chars(string):
+    separator = "super_special_separator_that_is_highly_unlikely_to_naturaly_appear_in_a_given_written_text_'Rq9*c8;tCI9"
+    return separator.join(string).split(separator)
+"""
