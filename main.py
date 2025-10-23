@@ -34,11 +34,13 @@ def main(path_to_book):
 def main(path_to_book):
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_book}...")
+    book_text_in_lower_case = get_book_text(path_to_book).lower()
     print("----------- Word Count ----------")
-
+    print(f"Found {word_counter(book_text_in_lower_case)} total words")
     print("--------- Character Count -------")
-
+    pretty_printer(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
     print("============= END ===============")
+    
 # ======================================================================
 main("books/frankenstein.txt")
 # sorted_list_of_dics = [{"char": "a", "count": 3}, {"char": "b", "count": 2}]
