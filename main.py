@@ -1,4 +1,5 @@
 from stats import word_counter, key_counter, sort_dic, sort_alpha
+import sys
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -12,8 +13,20 @@ def pretty_printer(sorted_list_of_dics):
     for dic in sorted_list_of_dics:
         print(f"{dic["char"]}: {dic["count"]}")
 
-# ======================================================================
+def get_arguments():
+    if len(sys.argv) == 1:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    try:
+        if sys.argv[2] == "--non-alpha": print("non-alpha flag")
+        else: print("flag not recognized")
+    except Exception: pass
+    return sys.argv[1]
+filepath = get_arguments()
+print(filepath)
 
+# ======================================================================
+"""
 def main(path_to_book):
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_book}...")
@@ -23,7 +36,7 @@ def main(path_to_book):
     print("--------- Character Count -------")
     pretty_printer(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
     print("============= END ===============")
-
+"""
 # ======================================================================
 
-main("books/frankenstein.txt")
+#main("books/frankenstein.txt")
