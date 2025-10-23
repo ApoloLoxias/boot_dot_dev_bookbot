@@ -1,4 +1,4 @@
-from stats import word_counter, key_counter
+from stats import word_counter, key_counter, sort_dic
 
 def get_book_text(filepath):
     with open(filepath) as f:
@@ -9,12 +9,20 @@ def list_chars(string):
     return separator.join(string).split(separator)
 
 # ======================================================================
-
+"""
 def main(path_to_book):
     book_text_in_lower_case = get_book_text(path_to_book).lower()
     print(f"Found {word_counter(book_text_in_lower_case)} total words")
     print(key_counter(list_chars(book_text_in_lower_case)))
-
+"""
 # =====================================================================
 
+def main(path_to_book):
+    book_text_in_lower_case = get_book_text(path_to_book).lower()
+    print(f"Found {word_counter(book_text_in_lower_case)} total words")
+    #counted_char_dic = key_counter(list_chars(book_text_in_lower_case))
+    #print(sort_dic(counted_char_dic))
+    print(sort_dic(key_counter(list_chars(book_text_in_lower_case))))
+
+#======================================================================
 main("books/frankenstein.txt")
