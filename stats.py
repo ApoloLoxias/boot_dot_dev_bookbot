@@ -37,5 +37,5 @@ def sort_on_follow_up(list):
     return list
 
 # Nested function for reduced insanity check DC on code reading
-def sort_dic(dic)
+def sort_dic(dic):
     return sort_on_follow_up(helper_function(dic))
