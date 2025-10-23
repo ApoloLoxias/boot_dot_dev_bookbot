@@ -1,0 +1,8 @@
+# Code that turns a dictionary of char: count pairs into a list of dictionarys with {"char": char, "count" count} pairs
+"""
+dic = {"a": 1, "b": 3, "c": 2}
+helper_list = []
+for key in dic:
+    helper_list.append({"char": key, "count": dic[key]})
+print(helper_list)
+"""
