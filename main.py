@@ -28,8 +28,18 @@ def main(path_to_book):
     print(key_counter(list_chars(get_book_text(path_to_book).lower())))
 """
 # main("books/frankenstein.txt")
+
+"""
+Main function that prints how words and dictionary with how many characters
 def main(path_to_book):
     print(f"Found {word_counter(get_book_text(path_to_book))} total words")
     print(key_counter(list_chars(get_book_text(path_to_book).lower())))
+"""
+# main("books/frankenstein.txt")
+
+def main(path_to_book):
+    book_text_in_lower_case = get_book_text(path_to_book).lower()
+    print(f"Found {word_counter(book_text_in_lower_case)} total words")
+    print(key_counter(list_chars(book_text_in_lower_case)))
 
 main("books/frankenstein.txt")
