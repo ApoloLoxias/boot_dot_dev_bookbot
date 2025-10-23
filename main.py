@@ -11,24 +11,7 @@ def list_chars(string):
 def pretty_printer(sorted_list_of_dics):
     for dic in sorted_list_of_dics:
         print(f"{dic["char"]}: {dic["count"]}")
-# ======================================================================
-"""
-def main(path_to_book):
-    book_text_in_lower_case = get_book_text(path_to_book).lower()
-    print(f"Found {word_counter(book_text_in_lower_case)} total words")
-    print(key_counter(list_chars(book_text_in_lower_case)))
-"""
-# =====================================================================
-"""
-def main(path_to_book):
-    book_text_in_lower_case = get_book_text(path_to_book).lower()
-    print(f"Found {word_counter(book_text_in_lower_case)} total words")
-    #counted_char_dic = key_counter(list_chars(book_text_in_lower_case))
-    #print(sort_dic(counted_char_dic))
-    #print(sort_dic(key_counter(list_chars(book_text_in_lower_case))))
-    #print(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
-    pretty_printer(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
-"""
+
 # ======================================================================
 
 def main(path_to_book):
@@ -40,8 +23,7 @@ def main(path_to_book):
     print("--------- Character Count -------")
     pretty_printer(sort_alpha(key_counter(list_chars(book_text_in_lower_case))))
     print("============= END ===============")
-    
+
 # ======================================================================
+
 main("books/frankenstein.txt")
-# sorted_list_of_dics = [{"char": "a", "count": 3}, {"char": "b", "count": 2}]
-# pretty_printer(sorted_list_of_dics)
