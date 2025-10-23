@@ -1,3 +1,7 @@
+##################################
+# Counters
+##################################
+
 def word_counter(text_string):
     return(len(text_string.split()))
 
@@ -9,3 +13,25 @@ def key_counter(keys):
         except Exception:
             dic[key] =  1
     return dic
+
+##################################
+#Sorting
+##################################
+
+# Function that turns a dictionary of char: count pairs into a list of dictionarys with {"char": char, "count" count} pairs
+# It helps with sorting
+def helper_function(dic):
+    helper_list = []
+    for key in dic:
+        helper_list.append({"char": key, "count": dic[key]})
+    return helper_list
+
+#Sorting proper
+
+# helper function for .sort()
+def sort_on(items):
+    return items["count"]
+
+def sort_on_follow_up(list):
+    list.sort(reverse = True, key=sort_on)
+    return list
