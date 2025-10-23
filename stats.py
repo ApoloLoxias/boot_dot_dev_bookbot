@@ -41,7 +41,7 @@ def sort_dic(dic):
     return sort_on_follow_up(helper_function(dic))
 
 # Like the funcition above, but only for alphabetical characters
-def sort_alpha(dic)
+def sort_alpha(dic):
     return sort_on_follow_up(helper_function(only_alpha(dic)))
 
 ##################################
