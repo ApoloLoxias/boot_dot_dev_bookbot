@@ -37,6 +37,7 @@ def sort_on_follow_up(list):
     return list
 
 # Nested function for reduced insanity check DC on code reading
+# Unused
 def sort_dic(dic):
     return sort_on_follow_up(helper_function(dic))
 
@@ -54,3 +55,10 @@ def only_alpha(dic):
         if key.isalpha():
             alpha_dic[key] = dic [key]
     return alpha_dic
+
+def only_nalpha(dic):
+    nalpha_dic = {}
+    for key in dic:
+        if key.isalpha() == False:
+            nalpha_dic[key] = dic [key]
+    return nalpha_dic
