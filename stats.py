@@ -59,5 +59,7 @@ def only_nalpha(dic):
     nalpha_dic = {}
     for key in dic:
         if key.isalpha() == False:
-            nalpha_dic[key] = dic [key]
+            if key == " ": nalpha_dic["'whitespace'"] = dic[key]
+            elif key =="\n": nalpha_dic["'linebreak'"] = dic[key]
+            else: nalpha_dic[key] = dic [key]
     return nalpha_dic
